@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Managment.Droid", "Managment.Droid\Managment.Droid.csproj", "{21694888-0FD6-46B6-BA72-5582CD84EDF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Managment.Core", "Managment.Core\Managment.Core.csproj", "{1C9FCE00-C4A0-4D94-AC6D-49F4911E3DB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Managment.Test", "Managment.Test\Managment.Test.csproj", "{7F537669-3C3B-40D5-BCB2-833B83227D77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21694888-0FD6-46B6-BA72-5582CD84EDF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21694888-0FD6-46B6-BA72-5582CD84EDF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21694888-0FD6-46B6-BA72-5582CD84EDF5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{21694888-0FD6-46B6-BA72-5582CD84EDF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21694888-0FD6-46B6-BA72-5582CD84EDF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21694888-0FD6-46B6-BA72-5582CD84EDF5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1C9FCE00-C4A0-4D94-AC6D-49F4911E3DB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C9FCE00-C4A0-4D94-AC6D-49F4911E3DB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C9FCE00-C4A0-4D94-AC6D-49F4911E3DB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C9FCE00-C4A0-4D94-AC6D-49F4911E3DB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F537669-3C3B-40D5-BCB2-833B83227D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F537669-3C3B-40D5-BCB2-833B83227D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F537669-3C3B-40D5-BCB2-833B83227D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F537669-3C3B-40D5-BCB2-833B83227D77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EE72ED3-429C-4893-8352-7DDD52FC991C}
+	EndGlobalSection
+EndGlobal
