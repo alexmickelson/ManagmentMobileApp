@@ -3,17 +3,20 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross.Platforms.Android.Core;
+using System;
+using Managment.Core;
 
 namespace Managment.Droid
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity
+    [Application]
+    public class MainActivity : MvxAndroidApplication<MvxAndroidSetup<app>, app>
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+        public MainActivity(IntPtr javaReference, JniHandleOwnership transfer)
+            : base(javaReference, transfer)
         {
-            base.OnCreate(savedInstanceState);
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.activity_main);
+
         }
     }
 }
