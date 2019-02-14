@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Managment.Core.Model;
 
 namespace Managment.Core.Services
@@ -28,6 +29,16 @@ namespace Managment.Core.Services
         }
 
         public void Reset()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateComputer(Computer comp)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<List<Computer>> IComputerStorage.getAllComputers()
         {
             throw new NotImplementedException();
         }

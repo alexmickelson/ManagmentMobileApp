@@ -13,7 +13,7 @@ namespace Managment.Core
         public override void Initialize()
         {
             base.Initialize();
-            Mvx.IoCProvider.RegisterType<IComputerStorage, ComputerStorage>();
+            Mvx.IoCProvider.RegisterType<IComputerStorage, SqlStorageService>();
 
             RegisterAppStart<ListViewModel>();
         }

@@ -2,13 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Managment.Core.Services
 {
     public interface IComputerStorage
     {
-        List<Computer> getAllComputers();
+        Task<List<Computer>> getAllComputers();
         void AddComputer(Computer comp);
+        void UpdateComputer(Computer comp);
         void Reset();
     }
 }

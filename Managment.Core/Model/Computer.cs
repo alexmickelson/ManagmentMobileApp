@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SQLite;
 
 namespace Managment.Core.Model
 {
     public class Computer
     {
+        [PrimaryKey]
         public string SerialNumber { get; set; }
         public string MAC { get; set; }
         public string IPAddress { get; set; }

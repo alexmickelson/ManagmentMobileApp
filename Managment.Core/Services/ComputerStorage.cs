@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 using Managment.Core.Model;
 using Newtonsoft.Json;
 
@@ -45,6 +46,16 @@ namespace Managment.Core.Services
         public void Reset()
         {
             File.Delete(filePath);
+        }
+
+        Task<List<Computer>> IComputerStorage.getAllComputers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateComputer(Computer comp)
+        {
+            throw new NotImplementedException();
         }
     }
 }
