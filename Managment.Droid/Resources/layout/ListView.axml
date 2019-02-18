@@ -18,6 +18,12 @@
 		android:padding="10px"
 		android:text="Delete All"
 		local:MvxBind="Click Reset"/>
+	<MvxSpinner
+		android:layout_width="match_parent"
+		android:layout_height="80px"
+		android:layout_margin="5px"
+		android:padding="10px"
+		local:MvxBind="ItemsSource SortOptions; SelectedItem SelectedOption"/>
 	<MvxListView
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
