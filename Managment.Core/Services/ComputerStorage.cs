@@ -14,7 +14,7 @@ namespace Managment.Core.Services
         List<Computer> computers;
         private string filePath;
 
-        public ComputerStorage()
+        public ComputerStorage() 
         {
             var path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             filePath = Path.Combine(path, "computers.json");
@@ -40,6 +40,9 @@ namespace Managment.Core.Services
                 computers.Add(comp);
                 var fileContents = JsonConvert.SerializeObject(computers);
                 File.WriteAllText(filePath, fileContents);
+            } else
+            {
+                throw new Exception("Cannot add null computer");
             }
         }
 
