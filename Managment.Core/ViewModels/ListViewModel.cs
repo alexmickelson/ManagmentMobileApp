@@ -43,14 +43,14 @@ namespace Managment.Core.ViewModels
         {
             computers = await _computerStorage.getAllComputers();
             //computers = new List<Computer>();
-            RaisePropertyChanged(nameof(Comp));
+            RaisePropertyChanged(nameof(Computers));
 
             selectedOption = SortModel.SerialNumber;
             Sort();
         }
 
 
-        public List<Computer> Comp { get => computers; }
+        public List<Computer> Computers { get => computers; }
 
         public MvxCommand ClickCommand => clickCommand ?? (clickCommand = new MvxCommand(() =>
         {
@@ -106,7 +106,7 @@ namespace Managment.Core.ViewModels
 
             }
 
-            RaisePropertyChanged(() => Comp);
+            RaisePropertyChanged(() => Computers);
         }
 
 

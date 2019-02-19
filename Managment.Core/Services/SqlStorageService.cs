@@ -15,7 +15,7 @@ namespace Managment.Core.Services
 
         public SqlStorageService()
         {
-            var path = FileSystem.Current.LocalStorage.Path;
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             filePath = Path.Combine(path, "computers.db3");
             connection = new SQLiteAsyncConnection(filePath);
             connection.GetConnection().CreateTable<Computer>();

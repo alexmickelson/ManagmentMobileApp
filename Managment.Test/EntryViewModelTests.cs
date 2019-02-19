@@ -24,10 +24,13 @@ namespace Managment.Test
             bool result = false;
             var comp = new Mock<IComputerStorage>();
             var nav = new Mock<IMvxNavigationService>();
+
             comp.Setup(c => c.AddComputer(It.IsAny<Computer>())).Callback(() => result = true);
-            //nav.Setup(n => n.Navigate<ListViewModel>(new Mock<IMvxViewModel<ListViewModel>>().Object, null, new Mock<IMvxBundle>().Object)).Callback(() => result = true);
+
             var viewModel = new EntryViewModel(comp.Object, nav.Object);
+            var x = viewModel.Comp;
             viewModel.AddComputer.Execute(this);
+
             result.Should().BeTrue();
         }
     }

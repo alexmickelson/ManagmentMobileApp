@@ -9,6 +9,7 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Managment.Test
 {
@@ -19,25 +20,31 @@ namespace Managment.Test
         {
             base.Setup();
         }
+        
+
 
         //2
         [Test]
-        public void ListViewModelConstructor_SortsOnSerialNumber()
+        public async Task ListViewModelConstructor_SortsOnSerialNumber()
         {
             var comp = new SqlStorageService();
+            await comp.Reset();
             var nav = new Mock<IMvxNavigationService>();
 
             var c = new Computer();
             c.SerialNumber = "b";
-            var a = comp.AddComputer(c).Result;
+            var a = await comp.AddComputer(c);
 
             c = new Computer();
             c.SerialNumber = "a";
-            a = comp.AddComputer(c).Result;
+            a = await comp.AddComputer(c);
 
             var viewModel = new ListViewModel(comp, nav.Object);
+            await viewModel.AsyncConstructor();
 
-            var b = viewModel.Comp.ToArray()[0].SerialNumber.Should().Be("a");
+            var b = viewModel.Computers.ToArray()[0];
+            b.SerialNumber.Should().Be("a");
+            await comp.Reset();
         }
 
         //6
@@ -85,7 +92,7 @@ namespace Managment.Test
 
             }
 
-            var b = viewModel.Comp.ToArray()[0].Location.Should().Be("a");
+            var b = viewModel.Computers.ToArray()[0].Location.Should().Be("a");
         }
     }
 }

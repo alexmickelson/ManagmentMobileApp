@@ -29,9 +29,13 @@ namespace Managment.Core.ViewModels
 
         public MvxCommand AddComputer => addComputer ?? (addComputer = new MvxCommand(() =>
         {
+            if(comp == null)
+            {
+                throw new Exception("Cannot add Null computer");
+            }
             _computerStorage.AddComputer(comp);
             _navigationService.Navigate<ListViewModel>();
         }));
-
+        
     }
 }
