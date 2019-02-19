@@ -6,7 +6,7 @@ using Managment.Core.Model;
 
 namespace Managment.Core.Services
 {
-    class DummyComputerStorage : IComputerStorage
+    class DummyComputerStorage// : IComputerStorage
     {
         public void AddComputer(Computer comp)
         {
@@ -37,10 +37,6 @@ namespace Managment.Core.Services
         {
             throw new NotImplementedException();
         }
-
-        Task<List<Computer>> IComputerStorage.getAllComputers()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

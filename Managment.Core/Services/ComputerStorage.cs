@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace Managment.Core.Services
 {
-    public class ComputerStorage : IComputerStorage
+    public class ComputerStorage// : IComputerStorage
     {
 
         List<Computer> computers;
@@ -51,14 +51,11 @@ namespace Managment.Core.Services
             File.Delete(filePath);
         }
 
-        Task<List<Computer>> IComputerStorage.getAllComputers()
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public void UpdateComputer(Computer comp)
         {
             throw new NotImplementedException();
         }
+        
     }
 }

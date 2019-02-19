@@ -5,13 +5,7 @@ using Managment.Core.ViewModels;
 using Moq;
 using MvvmCross.Navigation;
 using MvvmCross.Tests;
-using MvvmCross.ViewModels;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Managment.Test
 {

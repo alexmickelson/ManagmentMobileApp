@@ -9,8 +9,8 @@ namespace Managment.Core.Services
     public interface IComputerStorage
     {
         Task<List<Computer>> getAllComputers();
-        void AddComputer(Computer comp);
-        void UpdateComputer(Computer comp);
-        void Reset();
+        Task<bool> AddComputer(Computer comp);
+        Task<bool> UpdateComputer(Computer comp);
+        Task<bool> Reset();
     }
 }

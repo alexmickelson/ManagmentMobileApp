@@ -23,7 +23,7 @@ namespace Managment.Core.ViewModels
         {
             _navigationService = navigationService;
             _computerStorage = computerStorage;
-            computers = _computerStorage.getAllComputers();
+            computers = _computerStorage.getAllComputers().Result;
 
             selectedOption = SortModel.SerialNumber;
             Sort();

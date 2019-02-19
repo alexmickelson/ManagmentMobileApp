@@ -7,7 +7,9 @@ namespace Managment.Core.Model
 {
     public class Computer
     {
-        [PrimaryKey]
+        //[PrimaryKey]
+        //[AutoIncrement]
+        //public int Id { get; set; }
         public string SerialNumber { get; set; }
         public string MAC { get; set; }
         public string IPAddress { get; set; }

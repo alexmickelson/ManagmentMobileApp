@@ -44,6 +44,8 @@ namespace Managment.Droid
 			global::MvvmCross.Resource.Styleable.MvxListView = global::Managment.Droid.Resource.Styleable.MvxListView;
 			global::MvvmCross.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::Managment.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
 			global::MvvmCross.Resource.Styleable.MvxListView_MvxItemTemplate = global::Managment.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::PCLStorage.Resource.String.ApplicationName = global::Managment.Droid.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::Managment.Droid.Resource.String.Hello;
 		}
 		
 		public partial class Animation
@@ -3174,6 +3176,12 @@ namespace Managment.Droid
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f090028
+			public const int ApplicationName = 2131296296;
+			
+			// aapt resource value: 0x7f090027
+			public const int Hello = 2131296295;
+			
 			// aapt resource value: 0x7f090000
 			public const int abc_action_bar_home_description = 2131296256;
 			
@@ -3261,11 +3269,11 @@ namespace Managment.Droid
 			// aapt resource value: 0x7f090010
 			public const int abc_toolbar_collapse_description = 2131296272;
 			
-			// aapt resource value: 0x7f090028
-			public const int action_settings = 2131296296;
+			// aapt resource value: 0x7f09002a
+			public const int action_settings = 2131296298;
 			
-			// aapt resource value: 0x7f090027
-			public const int app_name = 2131296295;
+			// aapt resource value: 0x7f090029
+			public const int app_name = 2131296297;
 			
 			// aapt resource value: 0x7f09001e
 			public const int appbar_scrolling_view_behavior = 2131296286;

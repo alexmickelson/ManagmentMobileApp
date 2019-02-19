@@ -1,30 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 using Managment.Core.Model;
-using PCLStorage;
 using SQLite;
+using PCLStorage;
 
 namespace Managment.Core.Services
 {
-    class SqlStorageService :  IComputerStorage
+    public class SqlStorageService :  IComputerStorage
     {
-
+        private readonly string filePath;
         readonly SQLiteAsyncConnection connection;
 
         public SqlStorageService()
         {
-            var local = FileSystem.Current.LocalStorage.Path;
-            var datafile = Path.Combine(local, "computers.db3");
-            connection = new SQLiteAsyncConnection(datafile);
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            filePath = Path.Combine(path, "computers.db3");
+            connection = new SQLiteAsyncConnection(filePath);
             connection.GetConnection().CreateTable<Computer>();
         }
 
-        public void AddComputer(Computer comp)
+        public async Task<bool> AddComputer(Computer comp)
         {
-            connection.InsertAsync(comp);
+            if (comp == null)
+            {
+                throw new Exception("Cannot add null computer");
+            }
+            await connection.InsertAsync(comp);
+            return true;
         }
 
         public async Task<List<Computer>> getAllComputers()
@@ -32,14 +36,16 @@ namespace Managment.Core.Services
             return await connection.Table<Computer>().ToListAsync();
         }
 
-        public void Reset()
+        public async Task<bool> Reset()
         {
-            connection.DeleteAllAsync<Computer>();
+            await connection.DeleteAllAsync<Computer>();
+            return true;
         }
 
-        public void UpdateComputer(Computer comp)
+        public async Task<bool> UpdateComputer(Computer comp)
         {
-            connection.UpdateAsync(comp);
+            await connection.UpdateAsync(comp);
+            return true;
         }
         
     }
