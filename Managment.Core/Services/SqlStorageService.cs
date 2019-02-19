@@ -1,21 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Managment.Core.Model;
 using SQLite;
 using PCLStorage;
+using System.IO;
+using System;
 
 namespace Managment.Core.Services
 {
     public class SqlStorageService :  IComputerStorage
     {
         private readonly string filePath;
-        readonly SQLiteAsyncConnection connection;
+        SQLiteAsyncConnection connection;
 
         public SqlStorageService()
         {
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var path = FileSystem.Current.LocalStorage.Path;
             filePath = Path.Combine(path, "computers.db3");
             connection = new SQLiteAsyncConnection(filePath);
             connection.GetConnection().CreateTable<Computer>();

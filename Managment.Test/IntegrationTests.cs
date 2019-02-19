@@ -59,7 +59,7 @@ namespace Managment.Test
             }
 
             Assert.Fail();
-        }       
+        }
 
         //10
         [Test]
@@ -79,8 +79,17 @@ namespace Managment.Test
 
             listViewModel.Comp.Should().BeEmpty();
         }
+        //10
+        [Test]
+        public void CanMakeListViewModel()
+        {
+            var comp = new SqlStorageService();
+            var nav = new Mock<IMvxNavigationService>();
 
-
-
+            var listViewModel = new ListViewModel(comp, nav.Object);
+            var c = listViewModel.Comp;
+            var cs = comp.getAllComputers().Result;
+        }
+        
     }
 }

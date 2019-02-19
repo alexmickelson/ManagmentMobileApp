@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Managment.Core.ViewModels
 {
@@ -23,10 +24,7 @@ namespace Managment.Core.ViewModels
         {
             _navigationService = navigationService;
             _computerStorage = computerStorage;
-            computers = _computerStorage.getAllComputers().Result;
-
-            selectedOption = SortModel.SerialNumber;
-            Sort();
+            AsyncConstructor();
 
             
             //var comp = new Computer();
@@ -39,6 +37,16 @@ namespace Managment.Core.ViewModels
             //comp.Location = "2";
             //_computerStorage.AddComputer(comp);
 
+        }
+
+        public async Task AsyncConstructor()
+        {
+            computers = await _computerStorage.getAllComputers();
+            //computers = new List<Computer>();
+            RaisePropertyChanged(nameof(Comp));
+
+            selectedOption = SortModel.SerialNumber;
+            Sort();
         }
 
 
