@@ -5,6 +5,7 @@ using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace Managment.Core.ViewModels
     {
         private IMvxNavigationService _navigationService;
         private IComputerStorage _computerStorage;
-        private List<Computer> computers;
+        private ObservableCollection<Computer> computers;
         private MvxCommand clickCommand;
         private MvxCommand reset;
 
@@ -50,7 +51,7 @@ namespace Managment.Core.ViewModels
         }
 
 
-        public List<Computer> Computers { get => computers; }
+        public ObservableCollection<Computer> Computers { get => computers; }
 
         public MvxCommand ClickCommand => clickCommand ?? (clickCommand = new MvxCommand(() =>
         {
@@ -86,27 +87,27 @@ namespace Managment.Core.ViewModels
         
         public void Sort ()
         {
-            switch (SelectedOption)
-            {
-                case SortModel.SerialNumber:
-                    computers = computers.OrderBy(x => x.SerialNumber).ToList();
-                    break;
+            //switch (SelectedOption)
+            //{
+            //    case SortModel.SerialNumber:
+            //        computers = computers.OrderBy(x => x.SerialNumber).ToList();
+            //        break;
 
-                case SortModel.MAC:
-                    computers = computers.OrderBy(x => x.MAC).ToList();
-                    break;
+            //    case SortModel.MAC:
+            //        computers = computers.OrderBy(x => x.MAC).ToList();
+            //        break;
 
-                case SortModel.IPAddress:
-                    computers = computers.OrderBy(x => x.IPAddress).ToList();
-                    break;
+            //    case SortModel.IPAddress:
+            //        computers = computers.OrderBy(x => x.IPAddress).ToList();
+            //        break;
 
-                case SortModel.Location:
-                    computers = computers.OrderBy(x => x.Location).ToList();
-                    break;
+            //    case SortModel.Location:
+            //        computers = computers.OrderBy(x => x.Location).ToList();
+            //        break;
 
-            }
+            //}
 
-            RaisePropertyChanged(() => Computers);
+            //RaisePropertyChanged(() => Computers);
         }
 
 

@@ -27,6 +27,6 @@
 	<MvxListView
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
-		local:MvxBind="ItemsSource Comp"
+		local:MvxBind="ItemsSource Computers"
 		local:MvxItemTemplate="@layout/listitem" />
 </LinearLayout>

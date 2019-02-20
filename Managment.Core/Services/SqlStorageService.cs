@@ -5,6 +5,7 @@ using SQLite;
 using PCLStorage;
 using System.IO;
 using System;
+using System.Collections.ObjectModel;
 
 namespace Managment.Core.Services
 {
@@ -31,9 +32,9 @@ namespace Managment.Core.Services
             return true;
         }
 
-        public async Task<List<Computer>> getAllComputers()
+        public async Task<ObservableCollection<Computer>> getAllComputers()
         {
-            return await connection.Table<Computer>().ToListAsync();
+            return new ObservableCollection<Computer>(await connection.Table<Computer>().ToListAsync());
         }
 
         public async Task<bool> Reset()
