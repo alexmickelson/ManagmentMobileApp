@@ -8,6 +8,7 @@ using MvvmCross.Tests;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -42,7 +43,7 @@ namespace Managment.Test
             var viewModel = new ListViewModel(comp, nav.Object);
             await viewModel.AsyncConstructor();
 
-            var b = viewModel.Computers.ToArray()[0];
+            var b = viewModel.Computers[0];
             b.SerialNumber.Should().Be("a");
             await comp.Reset();
         }
@@ -55,7 +56,7 @@ namespace Managment.Test
             var comp = new Mock<IComputerStorage>();
             var nav = new Mock<IMvxNavigationService>();
 
-            comp.Setup(c => c.getAllComputers()).ReturnsAsync(new List<Computer>());
+            comp.Setup(c => c.getAllComputers()).ReturnsAsync(new ObservableCollection<Computer>());
             comp.Setup(c => c.Reset()).Callback(() => result = true);
 
             var viewModel = new ListViewModel(comp.Object, nav.Object);
@@ -92,7 +93,7 @@ namespace Managment.Test
 
             }
 
-            var b = viewModel.Computers.ToArray()[0].Location.Should().Be("a");
+            var b = viewModel.Computers[0].Location.Should().Be("a");
         }
     }
 }

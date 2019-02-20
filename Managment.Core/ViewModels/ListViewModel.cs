@@ -87,27 +87,27 @@ namespace Managment.Core.ViewModels
         
         public void Sort ()
         {
-            //switch (SelectedOption)
-            //{
-            //    case SortModel.SerialNumber:
-            //        computers = computers.OrderBy(x => x.SerialNumber).ToList();
-            //        break;
+            switch (SelectedOption)
+            {
+                case SortModel.SerialNumber:
+                    computers = new ObservableCollection<Computer>(computers.OrderBy(x => x.SerialNumber).ToList());
+                    break;
 
-            //    case SortModel.MAC:
-            //        computers = computers.OrderBy(x => x.MAC).ToList();
-            //        break;
+                case SortModel.MAC:
+                    computers = new ObservableCollection<Computer>(computers.OrderBy(x => x.MAC).ToList());
+                    break;
 
-            //    case SortModel.IPAddress:
-            //        computers = computers.OrderBy(x => x.IPAddress).ToList();
-            //        break;
+                case SortModel.IPAddress:
+                    computers = new ObservableCollection<Computer>(computers.OrderBy(x => x.IPAddress).ToList());
+                    break;
 
-            //    case SortModel.Location:
-            //        computers = computers.OrderBy(x => x.Location).ToList();
-            //        break;
+                case SortModel.Location:
+                    computers = new ObservableCollection<Computer>(computers.OrderBy(x => x.Location).ToList());
+                    break;
 
-            //}
+            }
 
-            //RaisePropertyChanged(() => Computers);
+            RaisePropertyChanged(() => Computers);
         }
 
 
