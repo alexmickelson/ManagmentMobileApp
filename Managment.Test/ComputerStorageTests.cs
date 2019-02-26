@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Managment.Test
 {
@@ -61,11 +62,11 @@ namespace Managment.Test
 
         //4
         [Test]
-        public void Reset_DeletesComputers()
+        public async Task Reset_DeletesComputers()
         {
             var comp = new SqlStorageService();
-            var b = comp.AddComputer(new Computer()).Result;
-            var a = comp.Reset();
+            await comp.AddComputer(new Computer());
+            await  comp.Reset();
 
             if (!comp.getAllComputers().Result.Any())
             {
@@ -73,6 +74,19 @@ namespace Managment.Test
 
             }
             Assert.Fail();
+
+        }
+
+        //16
+        [Test]
+        public async Task AddComputer_AddsIndexAutomatically()
+        {
+            var comp = new SqlStorageService();
+            await comp.Reset();
+            await comp.AddComputer(new Computer());
+
+            var c = await comp.getAllComputers();
+            c[0].Id.Should().NotBe(null);
 
         }
     }

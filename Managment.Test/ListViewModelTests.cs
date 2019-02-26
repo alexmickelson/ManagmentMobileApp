@@ -67,23 +67,25 @@ namespace Managment.Test
 
         //7
         [Test]
-        public void Sort_SelectingOptionSorts()
+        public async Task Sort_SelectingOptionSorts_Location()
         {
             var comp = new SqlStorageService();
-            var z = comp.Reset().Result;
-            var nav = new Mock<IMvxNavigationService>();
+            await comp.Reset();
 
             var c = new Computer();
             c.SerialNumber = "b";
             c.Location = "a";
-            var a = comp.AddComputer(c).Result;
+            await comp.AddComputer(c);
 
             c = new Computer();
             c.SerialNumber = "a";
             c.Location = "b";
-            a = comp.AddComputer(c).Result;
+            await comp.AddComputer(c);
 
+            var nav = new Mock<IMvxNavigationService>();
             var viewModel = new ListViewModel(comp, nav.Object);
+
+            System.Threading.Thread.Sleep(100);
             try
             {
                 viewModel.SelectedOption = SortModel.Location;
@@ -95,5 +97,36 @@ namespace Managment.Test
 
             var b = viewModel.Computers[0].Location.Should().Be("a");
         }
+
+        //15
+        [Test]
+        public async Task Sort_SelectingOptionSorts_IPAddress()
+        {
+            var comp = new SqlStorageService();
+            await comp.Reset();
+            var nav = new Mock<IMvxNavigationService>();
+
+            var c = new Computer();
+            c.IPAddress = "b";
+            await comp.AddComputer(c);
+
+            c = new Computer();
+            c.IPAddress = "a";
+            await comp.AddComputer(c);
+
+            var viewModel = new ListViewModel(comp, nav.Object);
+            try
+            {
+                viewModel.SelectedOption = SortModel.IPAddress;
+
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            var b = viewModel.Computers[0].IPAddress.Should().Be("a");
+        }
+        
     }
 }
