@@ -18,6 +18,7 @@ namespace Managment.Core.Services
         {
             var path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             filePath = Path.Combine(path, "computers.db3");
+            
             connection = new SQLiteAsyncConnection(filePath);
             connection.GetConnection().CreateTable<Computer>();
         }

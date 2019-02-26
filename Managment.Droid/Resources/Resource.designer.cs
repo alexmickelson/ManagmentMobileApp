@@ -3141,6 +3141,9 @@ namespace Managment.Droid
 			// aapt resource value: 0x7f04003f
 			public const int tooltip = 2130968639;
 			
+			// aapt resource value: 0x7f040040
+			public const int UpdateView = 2130968640;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="150px"
+		android:layout_margin="5px"
+		android:padding="10px"
+		android:text="Update Computer"
+		local:MvxBind="Click UpdateComputer"/>
+    <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Serial Number: " />
+    <EditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          local:MvxBind="Text Comp.SerialNumber" />
+    <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="MAC Number: " />
+    <EditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          local:MvxBind="Text Comp.MAC" />
+    <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="IPAddress: " />
+    <EditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          local:MvxBind="Text Comp.IPAddress" />
+    <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Location: " />
+    <EditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          local:MvxBind="Text Comp.Location" />
+    <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Notes: " />
+    <EditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          local:MvxBind="Text Comp.Notes" />
+	
+</LinearLayout>

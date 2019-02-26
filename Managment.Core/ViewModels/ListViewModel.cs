@@ -110,6 +110,14 @@ namespace Managment.Core.ViewModels
             RaisePropertyChanged(() => Computers);
         }
 
+        private MvxCommand<Computer> update;
+        public  MvxCommand<Computer> Update => update ?? (update = new MvxCommand<Computer>(onUpdate));
+
+        void onUpdate(Computer c)
+        {
+
+            _navigationService.Navigate(typeof(UpdateViewModel), c);
+        }
 
     }
 }
