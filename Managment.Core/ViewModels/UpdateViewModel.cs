@@ -21,6 +21,7 @@ namespace Managment.Core.ViewModels
             _computerStorage = computerStorage;
         }
 
+        
         private Computer comp;
         public Computer Comp => comp ?? (comp = new Computer());
 
