@@ -5,9 +5,11 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Managment.Droid", "Managment.Droid\Managment.Droid.csproj", "{21694888-0FD6-46B6-BA72-5582CD84EDF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Managment.Core", "Managment.Core\Managment.Core.csproj", "{1C9FCE00-C4A0-4D94-AC6D-49F4911E3DB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Managment.Core", "Managment.Core\Managment.Core.csproj", "{1C9FCE00-C4A0-4D94-AC6D-49F4911E3DB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Managment.Test", "Managment.Test\Managment.Test.csproj", "{7F537669-3C3B-40D5-BCB2-833B83227D77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Managment.Test", "Managment.Test\Managment.Test.csproj", "{7F537669-3C3B-40D5-BCB2-833B83227D77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITest1", "UITest1\UITest1.csproj", "{B19C892E-2628-4CA7-AD27-08D406A3B14B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{7F537669-3C3B-40D5-BCB2-833B83227D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F537669-3C3B-40D5-BCB2-833B83227D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F537669-3C3B-40D5-BCB2-833B83227D77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B19C892E-2628-4CA7-AD27-08D406A3B14B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B19C892E-2628-4CA7-AD27-08D406A3B14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B19C892E-2628-4CA7-AD27-08D406A3B14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B19C892E-2628-4CA7-AD27-08D406A3B14B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
